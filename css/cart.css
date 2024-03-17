@@ -1,0 +1,393 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-padding-top: 2rem;
+	scroll-behavior: smooth;
+}
+
+:root {
+	--main-color: #fd4646;
+	--text-color: #171427;
+	--bg-color: #fff;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	color: var(--text-color);
+	font-weight: 400;
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	width: 100%;
+}
+
+/* ==========  ==================== */
+
+.container {
+	max-width: 1068px;
+	margin: auto;
+	width: 100%;
+}
+
+section {
+	padding: 4rem 0 3rem;
+}
+
+/* ========== HEADER ==================== */
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: var(--bg-color);
+	box-shadow: 0 1px 4px hsl(0 4% 15% / 10%);
+	z-index: 100;
+}
+
+.nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px 0;
+}
+
+.logo {
+	font-size: 1.1rem;
+	color: var(--text-color);
+}
+.header .navbar ul li{
+    margin: 0 1.5rem;
+
+}
+
+.header .navbar ul li a{
+    font-size: 2rem;
+    color: #fff;
+}
+
+.header .navbar ul li a:hover{
+    color: #00bfff;
+    text-decoration: underline;
+}
+
+#cart-icon {
+	font-size: 1.8rem;
+	cursor: pointer;
+}
+
+/* ========== CART ==================== */
+.cart {
+	position: fixed;
+	top: 0;
+	right: -100%;
+	width: 360px;
+	min-height: 100vh;
+	padding: 20px;
+	background-color: var(--bg-color);
+	box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
+	transition: right 0.3s;
+}
+
+.cart.active {
+	right: 0;
+}
+
+.cart-title {
+	font-size: 1.5rem;
+	font-weight: 600;
+	text-align: center;
+	margin-top: 2rem;
+}
+
+.cart-box {
+	display: grid;
+	grid-template-columns: 32% 50% 18%;
+	gap: 1rem;
+	align-items: center;
+	margin-top: 1rem;
+}
+
+.cart-img {
+	width: 100px;
+	height: 100px;
+	object-fit: contain;
+	padding: 10px;
+}
+
+.detail-box {
+	display: grid;
+	row-gap: 0.5rem;
+}
+
+.cart-product-title {
+	font-size: 1rem;
+	text-transform: uppercase;
+}
+
+.cart-price {
+	font-weight: 500;
+}
+
+.cart-quantity {
+	border: 1px solid var(--text-color);
+	outline-color: var(--main-color);
+	width: 2.4rem;
+	font-size: 1rem;
+	text-align: center;
+}
+
+.cart-remove {
+	font-size: 1.5rem;
+	color: var(--main-color);
+	cursor: pointer;
+}
+
+.total {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 1.5rem;
+	border-top: 1px solid var(--text-color);
+}
+
+.total-title {
+	font-size: 1rem;
+	font-weight: 600;
+}
+
+.total-price {
+	margin-left: 0.5rem;
+}
+
+.btn-buy {
+	display: flex;
+	margin: 1.5rem auto 0 auto;
+	padding: 12px 20px;
+	font-size: 1rem;
+	font-weight: 500;
+	border: none;
+	background-color: var(--main-color);
+	color: var(--bg-color);
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.btn-buy:hover {
+	background-color: var(--text-color);
+}
+
+#close-cart {
+	position: absolute;
+	top: 1rem;
+	right: 0.8rem;
+	color: var(--text-color);
+	font-size: 2rem;
+	cursor: pointer;
+}
+
+
+.shop {
+	margin-top: 2rem;
+}
+
+.section-title {
+	font-size: 1.5rem;
+	font-weight: 600;
+	text-align: center;
+	margin-bottom: 1.5rem;
+}
+
+/* ========== SHOP CONTENT ==================== */
+.shop-content {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+	gap: 1.5rem;
+}
+
+.product-box {
+	position: relative;
+}
+
+.product-box:hover {
+	padding: 10px;
+	border: 1px solid var(--text-color);
+	transition: padding 0.4s;
+}
+
+.product-img {
+	width: 100%;
+	height: 300px;
+	margin-bottom: 0.5rem;
+  	object-fit: cover;
+}
+
+.product-title {
+	font-size: 1.1rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin-bottom: 0.5rem;
+}
+
+.price {
+	font-weight: 500;
+}
+
+.add-cart {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background-color: var(--text-color);
+	color: var(--bg-color);
+	padding: 10px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.add-cart:hover {
+	background-color: rgba(23, 20, 39, 0.8);
+}
+
+/* ========== Breakpoints ==================== */
+@media (max-width: 1080px) {
+	.nav {
+		padding: 15px;
+	}
+
+	section {
+		padding: 3rem 0 2rem;
+	}
+
+	.container {
+		margin: 0 auto;
+		width: 90%;
+	}
+
+	.shop {
+		margin-top: 2rem !important;
+	}
+}
+
+@media (max-width: 400px) {
+	.nav {
+		padding: 11px;
+	}
+
+	.logo {
+		font-size: 1rem;
+	}
+
+	.cart {
+		width: 320px;
+	}
+}
+
+@media (max-width: 360px) {
+	.shop {
+		margin-top: 1rem !important;
+	}
+
+	.cart {
+		width: 280px;
+	}
+}
+/* Reset some styles */
+footer {
+	margin: 0;
+	padding: 0;
+  }
+  
+  /* Styling for the footer */
+  footer {
+	background: #e3edf7;
+	text-align: center;
+	padding: 20px 0;
+  }
+  
+  /* Footer heading */
+  footer h1 {
+	font-family: sans-serif;
+	font-weight: normal;
+	font-size: 25px;
+	letter-spacing: 4px;
+	color: #555;
+  }
+  
+  /* Social media links container */
+  .social-media {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px; /* Adjust as needed */
+  }
+  
+  /* Styling for social media links */
+  .social-media a {
+	display: flex;
+	background: #e3edf7;
+	height: 75px;
+	width: 75px;
+	margin: 0 15px;
+	border-radius: 8px;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+	  -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+	border: 1px solid rgba(0, 0, 0, 0);
+	transition: transform 0.5s;
+  }
+  
+  .social-media a i {
+	font-size: 50px;
+	color: #777;
+	transition: transform 0.5s;
+  }
+  
+  /* Hover styles for social media links */
+  .social-media a:hover {
+	box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+	  inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+	  -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+	  0.5px 0.5px 0px rgba(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+	border: 1px solid rgba(0, 0, 0, 0.01);
+	transform: translateY(2px);
+  }
+  
+  .social-media a:hover i {
+	transform: scale(1);
+  }
+  
+  /* Social media icon colors on hover */
+  .social-media a:hover .fa-facebook {
+	color: #3b5998;
+  }
+  
+  .social-media a:hover .fa-twitter {
+	color: #00acee;
+  }
+  
+  .social-media a:hover .fa-github {
+	color: #000000;
+  }
+  
+  .social-media a:hover .fa-instagram {
+	color: #f14843;
+  }
+  
+  .social-media a:hover .fa-linkedin-in {
+	color: #3b5998;
+  }
+  
